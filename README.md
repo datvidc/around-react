@@ -19,6 +19,10 @@ This includes creating needed architecture with components- and re-doing the BEM
 ### who is Yandex
 Yandex is one of the largest IT companies in Europe, and work with everything from Search engines to self-driving cars.
 
+[yandex](https;//www.yandex.com)
+
 ### What is Practicum by Yandex
 Intensive 7 - 10 months bootcamp style code-school that focuses on taking students from zero to first job ready.
+
+[practicum by Yandex](https://practicum.yandex.com/)
 

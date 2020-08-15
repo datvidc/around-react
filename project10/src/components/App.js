@@ -11,9 +11,6 @@ function App() {
 		<Main />
 			<Footer />
 
-
-
-
   <div className="popup popup__edit-picture">
     <div className="popup__container popup__container_userImg">
       <button type="submit " className="popup__close"> </button>

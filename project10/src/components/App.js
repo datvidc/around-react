@@ -1,5 +1,5 @@
 import React from 'react';
-import Vector from './images/Vector.svg';
+import Vector from '../images/Vector.svg';
 
 function App() {
   return (

@@ -2,7 +2,6 @@ import React from 'react';
 import image from '../images/image.png';
 
 
-
 function Main() {
 
 

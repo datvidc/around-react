@@ -1,13 +1,11 @@
 import React from 'react';
-
+import Header from './Header.js';
 
 function App() {
   return (
 <div >
 
-  <header className="header">
-    <img className="header__logo" src={Vector} alt="Around the US" />
-  </header>
+<Header />
 
   <main>
     <section className="profile">

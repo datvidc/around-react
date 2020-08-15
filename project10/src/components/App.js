@@ -1,18 +1,18 @@
 import React from 'react';
 import Header from './Header.js';
 import Main from './Main.js';
+import Footer from './Footer.js';
+
 
 function App() {
   return (
 <div >
+	<Header />
+		<Main />
+			<Footer />
 
-<Header />
-    <Main />
 
 
-  <footer className="footer ">
-    <p className="footer__copyright ">© 2020 Around The U.S.</p>
-  </footer>
 
   <div className="popup popup__edit-picture">
     <div className="popup__container popup__container_userImg">

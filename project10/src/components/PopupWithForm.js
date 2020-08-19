@@ -7,16 +7,9 @@ function PopupWithForm (props) {
 
 
   return(
-    <div className={`popup popup__${props.name}`>
-
-
-
-
-
-
-    </div>
-
-
+    <div>
+      <p> It was served</p>
+  </div>
   )
 
 }

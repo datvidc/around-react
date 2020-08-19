@@ -24,21 +24,8 @@ class App extends React.Component {
 		    <Main />
 			  <Footer />
 
-        {editPicture ? <PopupWithForm 
-        <div className="popup popup__edit-picture">
-          <div className="popup__container popup__container_userImg">
-            <button type="submit " className="popup__close"> </button>
-            <form className="popup__edit-form popup__edit-userImg">
-            <h3 className="popup__userImg-heading">Change profile picture </h3>
-              <label className="popup__label-group">
-                <input id="user-link" type="url" placeholder="Image link" className="popup__edit_invalid popup__edit popup__url popup_detail " name="imgUrl" required />
-                  <span id="user-link--error" className="popup__error-input popup__url_error">Please enter a URL.</span>
-              </label>
-            <button type="submit" className="popup__save popup__userImg"> Yes </button>
-            </form>
-        </div>
-      </div> />
-    : null }
+        {editPicture ? <PopupWithForm />
+    : <p> it was false</p> }
 
       <div className="popup popup__delete-confirm ">
         <div className="popup__container popup__container_delete ">

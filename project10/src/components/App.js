@@ -18,10 +18,13 @@ class App extends React.Component {
 
   render() {
     return (
-      <div >
+
+  <div >
 	      <Header />
 		    <Main />
 			  <Footer />
+
+        {editPicture ? <PopupWithForm 
         <div className="popup popup__edit-picture">
           <div className="popup__container popup__container_userImg">
             <button type="submit " className="popup__close"> </button>
@@ -34,7 +37,8 @@ class App extends React.Component {
             <button type="submit" className="popup__save popup__userImg"> Yes </button>
             </form>
         </div>
-      </div>
+      </div> />
+    : null }
 
       <div className="popup popup__delete-confirm ">
         <div className="popup__container popup__container_delete ">
@@ -84,29 +88,28 @@ class App extends React.Component {
       </div>
     </div>
 
-  <div className="popup popup__img">
-    <div className="popup__card popup_image">
-      <button type="submit " className="popup__close popup__closeimg"> </button>
-      <img src="# " alt=" " className="popup__image popImg" />
-      <p className="popup__imgtext">PlaceName </p>
+    <div className="popup popup__img">
+      <div className="popup__card popup_image">
+        <button type="submit " className="popup__close popup__closeimg"> </button>
+        <img src="# " alt=" " className="popup__image popImg" />
+        <p className="popup__imgtext">PlaceName </p>
+      </div>
     </div>
-  </div>
 
 
-  <template className="element__elem ">
-  <li className="elements__element ">
-    <button id="elements__trash " className="elements__trash " />
-    <img className="elements__image " src="# " alt=" " />
-    <div className="elements__photo-bottom ">
-      <p className="elements__text "> </p>
-      <button className="elements__heart "></button>
-      <p className="elements__heart_likes "> 0</p>
-    </div>
-  </li>
-  </template>
+    <template className="element__elem ">
+      <li className="elements__element ">
+        <button id="elements__trash " className="elements__trash " />
+        <img className="elements__image " src="# " alt=" " />
+        <div className="elements__photo-bottom ">
+          <p className="elements__text "> </p>
+          <button className="elements__heart "></button>
+          <p className="elements__heart_likes "> 0</p>
+        </div>
+      </li>
+    </template>
 </div>
   );
   }
 }
-
 export default App;

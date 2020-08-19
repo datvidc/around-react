@@ -24,7 +24,7 @@ function Main() {
   return (
     <main>
     <section className="profile">
-      <div className="profile__avatar-overlay" onClick={handleEditAvatarClick}>
+      <div className="profile__avatar-overlay" onClick={handleEditAvatarClick, this.setState({editPicture = !this.state.editPicture})}>
         <img src={image} alt="J. Cousteau- with his iconic red hat" className="profile__avatar" />
         <div className="profile__avatar-hover" />
       </div>

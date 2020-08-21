@@ -10,6 +10,7 @@ props.name (name of className)
 props.heading (popup heading)
 props.children (actual form)
 props.buttonText (save button text)
+props.closeItAll (close all popups):
  */
 
   return(
@@ -18,11 +19,11 @@ props.buttonText (save button text)
 
   <div className={`popup popup_type_${props.name} ${isOpenClass}`}>
     <div className="popup__container">
-      <button type="submit" className="popup__close"> </button>
+      <button onClick={props.closeItAll} type="submit" className="popup__close"> </button>
       <form className="popup__edit-form">
         <h3 className="popup__heading"> {props.heading} </h3>
           {props.children}
-        <button type="submit" className="popup__save"> {props.buttonText} </button>
+        <button  type="submit" className="popup__save"> {props.buttonText} </button>
       </form>
     </div>
   </div>

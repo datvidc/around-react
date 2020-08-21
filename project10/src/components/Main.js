@@ -7,18 +7,18 @@ function Main() {
 
   function handleEditAvatarClick() {
       document.querySelector(".popup__edit-picture").
-      classList.add("popup_visible");
+      classList.toggle("popup_visible");
 
   }
 
   function handleEditProfileClick() {
     document.querySelector(".popup__changetext").
-      classList.add("popup_visible");
+      classList.toggle("popup_visible");
   }
 
   function handleAddPlaceClick() {
     document.querySelector(".popup__addcard").
-      classList.add("popup_visible");
+      classList.toggle("popup_visible");
   }
 
 

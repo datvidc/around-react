@@ -1,21 +1,22 @@
 import React from 'react';
 
 function PopupWithForm (props) {
-  // props { props.isOpen - }
+  const isOpenClass = props.isOpen ? "popup_visible" : "";
 
-
-// need:
-// props.name (name of className)
-//props.heading (popup heading)
-//props.children (actual form)
-// props.buttonText (save button text)
-
+/*
+need:
+props.isOpen (is popup open)
+props.name (name of className)
+props.heading (popup heading)
+props.children (actual form)
+props.buttonText (save button text)
+ */
 
   return(
 
 
 
-  <div className={`popup popup_type_${props.name}`}>
+  <div className={`popup popup_type_${props.name} ${isOpenClass}`}>
     <div className="popup__container">
       <button type="submit" className="popup__close"> </button>
       <form className="popup__edit-form">

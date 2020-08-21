@@ -37,7 +37,7 @@ class App extends React.Component {
 
   <div >
 	      <Header />
-		    <Main onAvatarClick={handleEditAvatarClick} on/>
+		    <Main onAvatarClick={handleEditAvatarClick} />
 			  <Footer />
       <PopupWithForm name="edit-picture" isOpen={this.state.isEditPicOpen} heading="Change profile picture" buttonText="Yes" >
 				<label className="popup__label-group">

@@ -37,46 +37,31 @@ class App extends React.Component {
 
   <div >
 	      <Header />
-		    <Main onAvatarClick={this.handleEditAvatarClick} closeItAll={this.closeAllPopups}/>
+		    <Main onAvatarClick={this.handleEditAvatarClick} />
 			  <Footer />
-      <PopupWithForm name="edit-picture" isOpen={this.state.isEditPicOpen} heading="Change profile picture" buttonText="Yes" >
+  /*   beginning of Popups */
+      <PopupWithForm name="edit-picture" isOpen={this.state.isEditPicOpen} heading="Change profile picture" buttonText="Yes" closeItAll={this.closeAllPopups} >
 				<label className="popup__label-group">
 				  <input id="user-link" type="url" placeholder="Image link" className="popup__edit_invalid popup__edit popup__url popup_detail " name="imgUrl" required />
 					<span id="user-link--error" className="popup__error-input popup__url_error">Please enter a URL.</span>
 				</label>
 			</PopupWithForm>
 
+      <PopupWithForm name="delete-confirm" isOpen={this.state.isDeletePopOpen} heading="Are you sure ?" buttonText="Yes" closeItAll={this.closeAllPopups} >
+      </PopupWithForm>
 
-      <div className="popup popup__delete-confirm ">
-        <div className="popup__container popup__container_delete ">
-          <button type="submit " className="popup__close "> </button>
-          <form className="popup__edit-form popup__edit-delete ">
-            <h3 className="popup__delete-heading ">Are you sure ? </h3>
-            <button type="submit " className="popup__save popup__delete "> Yes </button>
-          </form>
-        </div>
-      </div>
+      <PopupWithForm name="changetext" isOpen={this.state.isChangePopOpen} heading="Edit profile" buttonText="Save" closeItAll={this.closeAllPopups} >
+        <label className="popup__label-group">
+          <input id="form-name" type="text" minLength={2} maxLength={40} required pattern="[A-Za-z -]{2,40}" placeholder="Name" className="popup__edit popup__name popup_head" name="ProfileName" />
+          <span id="form-name--error" className="popup__edit_error popup__name-error" />
+        </label>
+        <label className="popup__label-group">
+          <input id="form-status" type="text" minLength={2} maxLength={200} required placeholder="About" className="popup__edit popup__title popup_detail" name="profileTitle" />
+          <span id="form-status--error" className="popup__edit_error popup__title-error" />
+        </label>
+      </PopupWithForm>
 
-      <div className=" popup popup__changetext ">
-        <div className="popup__container ">
-        <button type="submit " className="popup__close "> </button>
-        <form className="popup__edit-form">
-          <h3 className="popup__heading">Edit profile</h3>
-          <label className="popup__label-group">
-            <input id="form-name" type="text" minLength={2} maxLength={40} required pattern="[A-Za-z -]{2,40}" placeholder="Name" className="popup__edit popup__name popup_head" name="ProfileName" />
-            <span id="form-name--error" className="popup__edit_error popup__name-error" />
-          </label>
-
-          <label className="popup__label-group">
-            <input id="form-status" type="text" minLength={2} maxLength={200} required placeholder="About" className="popup__edit popup__title popup_detail" name="profileTitle" />
-            <span id="form-status--error" className="popup__edit_error popup__title-error" />
-          </label>
-          <button type="submit " className="popup__save "> Save</button>
-        </form>
-      </div>
-    </div>
-
-
+      <PopupWithForm name="addcard" isOpen={this.state.isAddPopOpen} > </PopupWithForm>
     <div className="popup popup__addcard">
       <div className="popup__container popup__container_addcard">
         <button type="submit" className="popup__close popup__close_addcard"> </button>

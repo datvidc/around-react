@@ -6,10 +6,7 @@ function Main(props) {
 
 
 
-  function handleAddPlaceClick() {
-    document.querySelector(".popup__addcard").
-      classList.toggle("popup_visible");
-  }
+
 
 
   return (
@@ -26,7 +23,7 @@ function Main(props) {
         </div>
         <p className="profile__title">Explorer</p>
       </div>
-      <button className="profile__add" onClick={handleAddPlaceClick}> </button>
+      <button className="profile__add" onClick={props.onAddPlaceClick}> </button>
     </section>
     <section className="elements">
       <ul className="elements__list">

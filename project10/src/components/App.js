@@ -25,6 +25,10 @@ class App extends React.Component {
     this.setState({ isChangePopOpen: true });
   }
 
+  handleAddPlaceClick = () => {
+    this.setState({ isAddPopOpen: true });
+  }
+
   closeAllPopups = () => {
     this.setState({
       isEditPicOpen: false,
@@ -40,7 +44,7 @@ class App extends React.Component {
 
   <div >
 	      <Header />
-		    <Main onAvatarClick={this.handleEditAvatarClick} onEditProfile={this.handleEditProfileClick} />
+		    <Main onAvatarClick={this.handleEditAvatarClick} onEditProfile={this.handleEditProfileClick} onAddPlaceClick={this.handleAddPlaceClick}/>
 			  <Footer />
   /*   beginning of Popups */
       <PopupWithForm name="edit-picture" isOpen={this.state.isEditPicOpen} heading="Change profile picture" buttonText="Yes" closeItAll={this.closeAllPopups} >

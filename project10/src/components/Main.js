@@ -4,10 +4,7 @@ import image from '../images/image.png';
 
 function Main(props) {
 
-function handleEditProfileClick() {
-    document.querySelector(".popup__changetext").
-      classList.toggle("popup_visible");
-  }
+
 
   function handleAddPlaceClick() {
     document.querySelector(".popup__addcard").
@@ -25,7 +22,7 @@ function handleEditProfileClick() {
       <div className="profile__text">
         <div className="profile__namebox">
           <p className="profile__name">Jacques Cousteau</p>
-          <button className="profile__edit" onClick={handleEditProfileClick} />
+          <button className="profile__edit" onClick={props.onEditProfile} />
         </div>
         <p className="profile__title">Explorer</p>
       </div>

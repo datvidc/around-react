@@ -21,6 +21,9 @@ class App extends React.Component {
   handleEditAvatarClick = () => {
     this.setState({ isEditPicOpen: true });
   }
+  handleEditProfileClick = () => {
+    this.setState({ isChangePopOpen: true });
+  }
 
   closeAllPopups = () => {
     this.setState({
@@ -37,7 +40,7 @@ class App extends React.Component {
 
   <div >
 	      <Header />
-		    <Main onAvatarClick={this.handleEditAvatarClick} />
+		    <Main onAvatarClick={this.handleEditAvatarClick} onEditProfile={this.handleEditProfileClick} />
 			  <Footer />
   /*   beginning of Popups */
       <PopupWithForm name="edit-picture" isOpen={this.state.isEditPicOpen} heading="Change profile picture" buttonText="Yes" closeItAll={this.closeAllPopups} >
@@ -61,24 +64,16 @@ class App extends React.Component {
         </label>
       </PopupWithForm>
 
-      <PopupWithForm name="addcard" isOpen={this.state.isAddPopOpen} > </PopupWithForm>
-    <div className="popup popup__addcard">
-      <div className="popup__container popup__container_addcard">
-        <button type="submit" className="popup__close popup__close_addcard"> </button>
-        <h3 className="popup__heading">New place</h3>
-        <form className="popup__edit-form popup__edit-form_add">
-          <label className="popup__label-group ">
-            <input id="form-title" type="text" minLength={2} maxLength={40} placeholder="Title" className="popup__edit_invalid popup__edit popup__place popup_head" name="placename" required />
-            <span id="form-title--error" className="popup__error-input popup__place-error"> Please fill out this field.</span>
-          </label>
-          <label className="popup__label-group">
-            <input id="form-link" type="url" placeholder="Image link" className="popup__edit_invalid popup__edit popup__url popup_detail" name="popupurl" required />
-            <span id="form-link--error" className="popup__error-input popup__url_error">Please enter a web address.</span>
-          </label>
-          <button type="submit" className="popup__save_invalid popup__save popup__save_addcard"> Create</button>
-        </form>
-      </div>
-    </div>
+      <PopupWithForm name="addcard" isOpen={this.state.isAddPopOpen} heading="New place" buttonText="Create" closeItAll={this.closeAllPopups} >
+        <label className="popup__label-group ">
+          <input id="form-title" type="text" minLength={2} maxLength={40} placeholder="Title" className="popup__edit_invalid popup__edit popup__place popup_head" name="placename" required />
+          <span id="form-title--error" className="popup__error-input popup__place-error"> Please fill out this field.</span>
+        </label>
+        <label className="popup__label-group">
+          <input id="form-link" type="url" placeholder="Image link" className="popup__edit_invalid popup__edit popup__url popup_detail" name="popupurl" required />
+          <span id="form-link--error" className="popup__error-input popup__url_error">Please enter a web address.</span>
+        </label>
+      </PopupWithForm>
 
     <div className="popup popup__img">
       <div className="popup__card popup_image">

@@ -2,16 +2,9 @@ import React from 'react';
 import image from '../images/image.png';
 
 
-function Main() {
+function Main(props) {
 
-
-  function handleEditAvatarClick() {
-      document.querySelector(".popup__edit-picture").
-      classList.toggle("popup_visible");
-
-  }
-
-  function handleEditProfileClick() {
+function handleEditProfileClick() {
     document.querySelector(".popup__changetext").
       classList.toggle("popup_visible");
   }
@@ -25,7 +18,7 @@ function Main() {
   return (
     <main>
     <section className="profile">
-      <div className="profile__avatar-overlay" onClick={handleEditAvatarClick}>
+      <div className="profile__avatar-overlay" onClick={props.onAvatarClick}>
         <img src={image} alt="J. Cousteau- with his iconic red hat" className="profile__avatar" />
         <div className="profile__avatar-hover" />
       </div>

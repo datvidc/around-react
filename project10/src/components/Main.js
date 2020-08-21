@@ -8,6 +8,7 @@ function Main() {
   function handleEditAvatarClick() {
       document.querySelector(".popup__edit-picture").
       classList.add("popup_visible");
+
   }
 
   function handleEditProfileClick() {
@@ -24,7 +25,7 @@ function Main() {
   return (
     <main>
     <section className="profile">
-      <div className="profile__avatar-overlay" onClick={handleEditAvatarClick, this.setState({editPicture = !this.state.editPicture})}>
+      <div className="profile__avatar-overlay" onClick={handleEditAvatarClick}>
         <img src={image} alt="J. Cousteau- with his iconic red hat" className="profile__avatar" />
         <div className="profile__avatar-hover" />
       </div>

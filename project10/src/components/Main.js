@@ -1,12 +1,15 @@
 import React from 'react';
 import image from '../images/image.png';
-
+import api from '../utils/api';
+import defaultAvatarPicture from "../images/DC-img.png";
 
 function Main(props) {
 
+/*   const [userName, setUserName] = useState("Lacking Gravitas");
+  const [userDescription, setUserDescription] = useState("Space Ship");
+  const [userAvatar, setUserAvatar] = useState(defaultAvatarPicture);
 
-
-
+ */
 
 
   return (

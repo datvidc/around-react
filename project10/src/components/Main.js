@@ -20,10 +20,10 @@ function Main(props) {
       </div>
       <div className="profile__text">
         <div className="profile__namebox">
-          <p className="profile__name">{userName}</p>
+          <p className="profile__name"> {userName} </p>
           <button className="profile__edit" onClick={props.onEditProfile} />
         </div>
-        <p className="profile__title">Explorer</p>
+        <p className="profile__title"> {userDescription} </p>
       </div>
       <button className="profile__add" onClick={props.onAddPlaceClick}> </button>
     </section>

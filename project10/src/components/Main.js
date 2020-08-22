@@ -15,7 +15,7 @@ function Main(props) {
     <main>
     <section className="profile">
       <div className="profile__avatar-overlay" onClick={props.onAvatarClick}>
-        <img src={userAvatar} alt="image of ${userName}" className="profile__avatar" />
+        <img src={userAvatar} alt="profile picture " className="profile__avatar" />
         <div className="profile__avatar-hover" />
       </div>
       <div className="profile__text">

@@ -9,6 +9,20 @@ function Main(props) {
   const [userName, setUserName] = useState("Lacking Gravitas");
   const [userDescription, setUserDescription] = useState("Space Ship");
   const [userAvatar, setUserAvatar] = useState(defaultAvatarPicture);
+  const [cards, setCards] = useState([]);
+
+
+ React.useEffect(() => {
+  getInitialCards()
+    .then(res => {
+      let initialCards = [];
+      res.forEach((card) => {
+        initialCards.push(card);
+      });
+      setCards(initialCards);
+    })
+
+ })
 
   React.useEffect(() => {
     api.getUser()

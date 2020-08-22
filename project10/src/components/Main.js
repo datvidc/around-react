@@ -10,8 +10,17 @@ function Main(props) {
   const [userDescription, setUserDescription] = useState("Space Ship");
   const [userAvatar, setUserAvatar] = useState(defaultAvatarPicture);
 
-  
-
+  React.useEffect(() => {
+    api.getUser()
+    .then(res => {
+      setUserName(res.name);
+      setUserDescription(res.about);
+      setUserAvatar(res.avatar)
+   })
+  .catch((err) => {
+    console.log(err);
+  });
+  })
 
 
   return (

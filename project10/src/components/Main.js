@@ -3,11 +3,14 @@ import image from '../images/image.png';
 import api from '../utils/api';
 import defaultAvatarPicture from "../images/DC-img.png";
 
+
 function Main(props) {
 
   const [userName, setUserName] = useState("Lacking Gravitas");
   const [userDescription, setUserDescription] = useState("Space Ship");
   const [userAvatar, setUserAvatar] = useState(defaultAvatarPicture);
+
+  
 
 
 
@@ -15,7 +18,7 @@ function Main(props) {
     <main>
     <section className="profile">
       <div className="profile__avatar-overlay" onClick={props.onAvatarClick}>
-        <img src={userAvatar} alt="profile picture " className="profile__avatar" />
+        <img src={userAvatar} alt={userName} className="profile__avatar" />
         <div className="profile__avatar-hover" />
       </div>
       <div className="profile__text">

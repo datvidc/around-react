@@ -36,7 +36,7 @@ function Main(props) {
   });
   })
 
-/*   console.log(cards); */
+/*  console.log(cards); */
   return (
     <main>
     <section className="profile">
@@ -57,7 +57,7 @@ function Main(props) {
       <ul className="elements__list">
         {cards ? (cards.map((card, index) => {
           return (
-      <template className="element__elem">
+      <template key={index} className="element__elem">
         <li className="elements__element">
           <button id="elements__trash " className="elements__trash " />
           <img className="elements__image " src={card} alt=" " />

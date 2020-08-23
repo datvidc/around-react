@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import image from '../images/image.png';
 import api from '../utils/api';
 import defaultAvatarPicture from "../images/DC-img.png";
-
+import Card from "./Card.js";
 
 function Main(props) {
 
@@ -58,13 +58,9 @@ function Main(props) {
     </section>
     <section className="elements">
       <ul className="elements__list">
-        {cards.map((card, index) => {
-
-          return (
-      )
-
-
-        })) : ""}
+        {cards.map((card, index) => (
+          <Card key={index} card={card}  />
+        ))}
       </ul>
     </section>
   </main>

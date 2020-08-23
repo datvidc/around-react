@@ -14,5 +14,7 @@ return(
       </div>
     </li>
   </template>
-)
+);
 }
+
+export default Card;

@@ -36,7 +36,7 @@ function Main(props) {
   });
   })
 
-
+/*   console.log(cards); */
   return (
     <main>
     <section className="profile">

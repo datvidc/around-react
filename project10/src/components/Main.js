@@ -13,7 +13,7 @@ function Main(props) {
 
 
  React.useEffect(() => {
-  getInitialCards()
+  api.getInitialCards()
     .then(res => {
       let initialCards = [];
       res.forEach((card) => {

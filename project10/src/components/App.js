@@ -13,11 +13,14 @@ class App extends React.Component {
       isDeletePopOpen: false,
       isChangePopOpen: false,
       isAddPopOpen: false,
-      isImagePopOpen: false
+      isImagePopOpen: false,
+      selectedCard: ""
     };
   }
 
-
+handleCardClick = (value) => {
+  this.setState({selectedCard: value});
+}
   handleEditAvatarClick = () => {
     this.setState({ isEditPicOpen: true });
   }
@@ -35,7 +38,8 @@ class App extends React.Component {
       isDeletePopOpen: false,
       isChangePopOpen: false,
       isAddPopOpen: false,
-      isImagePopOpen: false
+      isImagePopOpen: false,
+      selectedCard: ""
     })
   }
 

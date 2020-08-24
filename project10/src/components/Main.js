@@ -25,7 +25,7 @@ function Main(props) {
       setCards(initialCards);
     })
 
- })
+ },[])
 
   React.useEffect(() => {
     api.getUser()
@@ -37,9 +37,9 @@ function Main(props) {
   .catch((err) => {
     console.log(err);
   });
-  })
+  }, [])
 
-/*  console.log(cards); */
+
   return (
     <main>
     <section className="profile">

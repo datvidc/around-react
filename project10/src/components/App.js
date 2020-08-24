@@ -2,7 +2,8 @@ import React from 'react';
 import Header from './Header.js';
 import Main from './Main.js';
 import Footer from './Footer.js';
-import PopupWithForm from './PopupWithForm.js'
+import PopupWithForm from './PopupWithForm.js';
+import ImagePopup from './ImagePopup.js';
 
 
 class App extends React.Component {
@@ -84,16 +85,10 @@ handleCardClick = (value) => {
         </label>
       </PopupWithForm>
 
-      <ImagePopup>
+      <ImagePopup card={this.state.selectedCard} onClose={this.closeAllPopups}>
 
       </ImagePopup>
-    <div className="popup popup__img">
-      <div className="popup__card popup_image">
-        <button type="submit " className="popup__close popup__closeimg"> </button>
-        <img src="# " alt=" " className="popup__image popImg" />
-        <p className="popup__imgtext">PlaceName </p>
-      </div>
-    </div>
+
 
 
     <template className="element__elem ">

@@ -1,25 +1,20 @@
-class ImagePopup extends Popup {
-  constructor(popupSelector) {
-    super(popupSelector);
+import React from 'react';
 
-  }
+function ImagePopup(props) {
+  const isOpenClass = props.card ? "popup_visible" : "";
 
-  setEventListeners() {
-    //listener should only be added to image.
-    // it closes popup on ANY click anywhere in document. desired behaviour for image- not for anything else.
-    document.addEventListener("click", () => {
-      this.close();
-    })
-    super.setEventListeners();
-  }
-  open(name, link) {
-    const popEl = this._popupElement.querySelector(".popImg");
-    const popTxt = this._popupElement.querySelector(".popup__imgtext");
-    popEl.src = link;
-    popEl.alt = name;
-    popTxt.textContent = name;
-    super.open();
-  }
+
+  return (
+
+    <div className={`popup popup__img ${isOpenClass}`} >
+      <div className="popup__card popup_image">
+        <button type="submit" onClick={props.onClose} className="popup__close popup__closeimg"> </button>
+        <img src={props.card.link} alt={props.card.name} className="popup__image popImg" />
+        <p className="popup__imgtext">{props.card.name} </p>
+      </div>
+    </div>
+
+  )
 }
 
 export default ImagePopup;

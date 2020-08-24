@@ -59,7 +59,7 @@ function Main(props) {
     <section className="elements">
       <ul className="elements__list">
         {cards.map((card, index) => (
-          <Card key={index} card={card}  />
+          <Card key={index} card={card} onImgClick={props.onCardClick} />
         ))}
       </ul>
     </section>

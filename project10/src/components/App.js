@@ -20,6 +20,7 @@ class App extends React.Component {
 
 handleCardClick = (value) => {
   this.setState({selectedCard: value});
+
 }
   handleEditAvatarClick = () => {
     this.setState({ isEditPicOpen: true });
@@ -48,7 +49,7 @@ handleCardClick = (value) => {
 
   <div >
 	      <Header />
-		    <Main onAvatarClick={this.handleEditAvatarClick} onEditProfile={this.handleEditProfileClick} onAddPlaceClick={this.handleAddPlaceClick}/>
+		    <Main onCardClick={this.handleCardClick} onAvatarClick={this.handleEditAvatarClick} onEditProfile={this.handleEditProfileClick} onAddPlaceClick={this.handleAddPlaceClick}/>
 			  <Footer />
   /*   beginning of Popups */
       <PopupWithForm name="edit-picture" isOpen={this.state.isEditPicOpen} heading="Change profile picture" buttonText="Yes" closeItAll={this.closeAllPopups} >
@@ -83,6 +84,9 @@ handleCardClick = (value) => {
         </label>
       </PopupWithForm>
 
+      <ImagePopup>
+
+      </ImagePopup>
     <div className="popup popup__img">
       <div className="popup__card popup_image">
         <button type="submit " className="popup__close popup__closeimg"> </button>

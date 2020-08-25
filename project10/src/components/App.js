@@ -89,19 +89,6 @@ handleCardClick = (value) => {
 
       </ImagePopup>
 
-
-
-    <template className="element__elem ">
-      <li className="elements__element ">
-        <button id="elements__trash " className="elements__trash " />
-        <img className="elements__image " src="# " alt=" " />
-        <div className="elements__photo-bottom ">
-          <p className="elements__text "> </p>
-          <button className="elements__heart "></button>
-          <p className="elements__heart_likes "> 0</p>
-        </div>
-      </li>
-    </template>
 </div>
   );
   }

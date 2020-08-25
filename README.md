@@ -18,6 +18,12 @@ This includes creating needed architecture with components- and re-doing some of
 - porting existing websites to the React framework.
 - breakdown and analysis of exisiting website
 
+## Deployment
+run command __npm run build__
+this will trigger both the build and the gh-pages deployment.
+
+
+
 ### who is Yandex
 Yandex is one of the largest IT companies in Europe, and work with everything from Search engines to self-driving cars.
 

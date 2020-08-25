@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "77dd8058a2db1fcc95677f83f45298de",
+    "revision": "cef1b8b73a2402758707f27dc3180385",
     "url": "/around-react/index.html"
   },
   {
-    "revision": "5ea998c56b5af12b7dd5",
+    "revision": "7059f972d875e6b4d76d",
     "url": "/around-react/static/css/main.4734c8e4.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/around-react/static/js/2.c3e969b2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5ea998c56b5af12b7dd5",
-    "url": "/around-react/static/js/main.ce9c938e.chunk.js"
+    "revision": "7059f972d875e6b4d76d",
+    "url": "/around-react/static/js/main.67f5ea9f.chunk.js"
   },
   {
     "revision": "56dac69abe41c93e4d93",
@@ -126,10 +126,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "5bbb05f725aa334a73acf3174e255f4e",
     "url": "/around-react/static/media/heart_clicked.5bbb05f7.svg"
-  },
-  {
-    "revision": "0d10d5301916476f3e5ca3e9afa58780",
-    "url": "/around-react/static/media/image.0d10d530.png"
   },
   {
     "revision": "e0270e6710268c67a26289e12877ccbb",

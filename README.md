@@ -1,5 +1,7 @@
 # around-react
 
+Deployed project can be found here [Project 10](https://datvidc.github.io/around-react/)
+
 # Project 10
 Project 10 in the web developer bootcamp @Yandex Practicum
 

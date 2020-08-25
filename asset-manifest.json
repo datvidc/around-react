@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/around-react/static/css/main.4734c8e4.chunk.css",
+    "main.js": "/around-react/static/js/main.ce9c938e.chunk.js",
+    "main.js.map": "/around-react/static/js/main.ce9c938e.chunk.js.map",
+    "runtime-main.js": "/around-react/static/js/runtime-main.c9c2ed9c.js",
+    "runtime-main.js.map": "/around-react/static/js/runtime-main.c9c2ed9c.js.map",
+    "static/js/2.c3e969b2.chunk.js": "/around-react/static/js/2.c3e969b2.chunk.js",
+    "static/js/2.c3e969b2.chunk.js.map": "/around-react/static/js/2.c3e969b2.chunk.js.map",
+    "index.html": "/around-react/index.html",
+    "precache-manifest.937bf87f77789298bb63df2a523101eb.js": "/around-react/precache-manifest.937bf87f77789298bb63df2a523101eb.js",
+    "service-worker.js": "/around-react/service-worker.js",
+    "static/css/main.4734c8e4.chunk.css.map": "/around-react/static/css/main.4734c8e4.chunk.css.map",
+    "static/js/2.c3e969b2.chunk.js.LICENSE.txt": "/around-react/static/js/2.c3e969b2.chunk.js.LICENSE.txt",
+    "static/media/DC-img.png": "/around-react/static/media/DC-img.a8f51591.png",
+    "static/media/index.css": "/around-react/static/media/trashcan.4220563a.svg",
+    "static/media/Vector.svg": "/around-react/static/media/Vector.782b5eb4.svg",
+    "static/media/image.png": "/around-react/static/media/image.0d10d530.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c9c2ed9c.js",
+    "static/js/2.c3e969b2.chunk.js",
+    "static/css/main.4734c8e4.chunk.css",
+    "static/js/main.ce9c938e.chunk.js"
+  ]
+}

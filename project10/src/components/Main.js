@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import image from '../images/image.png';
 import api from '../utils/api';
 import defaultAvatarPicture from "../images/DC-img.png";
 import Card from "./Card.js";

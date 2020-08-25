@@ -7,7 +7,7 @@ This sprint was a quick introduction to React along with some of the React ecosy
 
 The project is basically to port [Project 9](https://github.com/datvidc/web_project_4) to React.
 
-This includes creating needed architecture with components- and re-doing the BEM CSS structure implemented in projects 4- 9
+This includes creating needed architecture with components- and re-doing some of the the JS class structure implemented in projects 4- 9
 
 ## Technologies and methodologies
 - React framework

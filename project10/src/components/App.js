@@ -108,7 +108,6 @@ handleUpdateUser = (valueArr) => {
       </PopupWithForm>
 
       <ImagePopup card={this.state.selectedCard} onClose={this.closeAllPopups}>
-
       </ImagePopup>
 			</CurrentUserContext.Provider>
 </div>

@@ -4,8 +4,8 @@ import Main from './Main.js';
 import Footer from './Footer.js';
 import PopupWithForm from './PopupWithForm.js';
 import ImagePopup from './ImagePopup.js';
-import defaultAvatarPicture from "../images/DC-img.png";
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
+import api from '../utils/api';
 
 class App extends React.Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class App extends React.Component {
       isAddPopOpen: false,
       isImagePopOpen: false,
 			selectedCard: "",
-			currentUser: {name: "Lacking Gravitas", about: "SPaceSHip", avatar: defaultAvatarPicture}
+			currentUser: {} //name: "Lacking Gravitas", about: "SPaceSHip", avatar: defaultAvatarPicture
       
     };
   }
@@ -58,7 +58,8 @@ handleUpdateUser = (valueArr) => {
 	componentDidMount() {
 		api.getUser()
     .then(res => {
-			handleUpdateUser(res);
+			this.handleUpdateUser(res);
+			console.log(res);
       })
   .catch((err) => {
     console.log(err);
@@ -69,7 +70,7 @@ handleUpdateUser = (valueArr) => {
     return (
 
   <div >
-		<CurrentUserContext.Provider value={currentUser}>	
+		<CurrentUserContext.Provider value={this.state.currentUser}>	
 	      <Header />
 		    <Main onCardClick={this.handleCardClick} onAvatarClick={this.handleEditAvatarClick} onEditProfile={this.handleEditProfileClick} onAddPlaceClick={this.handleAddPlaceClick}/>
 			  <Footer />

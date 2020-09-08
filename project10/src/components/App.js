@@ -4,6 +4,7 @@ import Main from './Main.js';
 import Footer from './Footer.js';
 import PopupWithForm from './PopupWithForm.js';
 import ImagePopup from './ImagePopup.js';
+import defaultAvatarPicture from "../images/DC-img.png";
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 class App extends React.Component {
@@ -16,7 +17,7 @@ class App extends React.Component {
       isAddPopOpen: false,
       isImagePopOpen: false,
 			selectedCard: "",
-			currentUser: {}
+			currentUser: {name: "Lacking Gravitas", about: "SPaceSHip". avatar: defaultAvatarPicture}
       
     };
   }

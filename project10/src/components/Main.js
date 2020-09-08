@@ -28,8 +28,6 @@ function Main(props) {
  },[])
 
 
-
-
   return (
     <main>
     <section className="profile">
@@ -49,7 +47,7 @@ function Main(props) {
     <section className="elements">
       <ul className="elements__list">
         {cards.map((card, index) => (
-          <Card key={index} card={card} onImgClick={props.onCardClick} />
+          <Card key={index} card={card} onImgClick={props.onCardClick} onLike={handleCardLike}/>
         ))}
       </ul>
     </section>

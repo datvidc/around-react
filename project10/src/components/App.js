@@ -21,13 +21,17 @@ class App extends React.Component {
     };
   }
 
-//importing the context value from provider
-const currentUser = React.useContext(CurrentUserContext);
+
 
 handleCardClick = (value) => {
   this.setState({selectedCard: value});
 
 }
+
+handleUpdateUser = (valueArr) => {
+	this.setState({currentUser : valueArr})
+}
+
   handleEditAvatarClick = () => {
     this.setState({ isEditPicOpen: true });
   }
@@ -51,8 +55,13 @@ handleCardClick = (value) => {
   }
 
 	componentDidMount() {
-
-
+		api.getUser()
+    .then(res => {
+			handleUpdateUser(res);
+      })
+  .catch((err) => {
+    console.log(err);
+  });
 	}
 
   render() {

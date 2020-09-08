@@ -16,6 +16,7 @@ class App extends React.Component {
       isAddPopOpen: false,
       isImagePopOpen: false,
       selectedCard: ""
+      
     };
   }
 

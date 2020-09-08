@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import api from '../utils/api';
-
 import Card from "./Card.js";
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
@@ -8,6 +7,10 @@ function Main(props) {
 
    const [cards, setCards] = useState([]);
   const currentUser = React.useContext(CurrentUserContext);
+
+ function handleCardLike(card) {
+    const isLiked = props.card.likes.some(i => i._id === currentUser._id);
+  }
 
  React.useEffect(() => {
   api.getInitialCards()

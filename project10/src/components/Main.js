@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import api from '../utils/api';
 import defaultAvatarPicture from "../images/DC-img.png";
 import Card from "./Card.js";
+import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 function Main(props) {
 
@@ -9,7 +10,7 @@ function Main(props) {
   const [userDescription, setUserDescription] = useState("Space Ship");
   const [userAvatar, setUserAvatar] = useState(defaultAvatarPicture);
   const [cards, setCards] = useState([]);
-
+  const currentUser = React.useContext(CurrentUserContext);
 
  React.useEffect(() => {
   api.getInitialCards()

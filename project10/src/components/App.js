@@ -17,7 +17,7 @@ class App extends React.Component {
       isAddPopOpen: false,
       isImagePopOpen: false,
 			selectedCard: "",
-			currentUser: {name: "Lacking Gravitas", about: "SPaceSHip". avatar: defaultAvatarPicture}
+			currentUser: {name: "Lacking Gravitas", about: "SPaceSHip", avatar: defaultAvatarPicture}
       
     };
   }

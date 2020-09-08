@@ -15,10 +15,14 @@ class App extends React.Component {
       isChangePopOpen: false,
       isAddPopOpen: false,
       isImagePopOpen: false,
-      selectedCard: ""
+			selectedCard: "",
+			currentUser: {}
       
     };
   }
+
+//importing the context value from provider
+const currentUser = React.useContext(CurrentUserContext);
 
 handleCardClick = (value) => {
   this.setState({selectedCard: value});
@@ -45,6 +49,11 @@ handleCardClick = (value) => {
       selectedCard: ""
     })
   }
+
+	componentDidMount() {
+
+
+	}
 
   render() {
     return (

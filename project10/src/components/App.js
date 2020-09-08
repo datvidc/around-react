@@ -4,7 +4,7 @@ import Main from './Main.js';
 import Footer from './Footer.js';
 import PopupWithForm from './PopupWithForm.js';
 import ImagePopup from './ImagePopup.js';
-
+import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 class App extends React.Component {
   constructor(props) {
@@ -50,6 +50,7 @@ handleCardClick = (value) => {
     return (
 
   <div >
+		<CurrentUserContext.Provider value={currentUser}>	
 	      <Header />
 		    <Main onCardClick={this.handleCardClick} onAvatarClick={this.handleEditAvatarClick} onEditProfile={this.handleEditProfileClick} onAddPlaceClick={this.handleAddPlaceClick}/>
 			  <Footer />
@@ -89,7 +90,7 @@ handleCardClick = (value) => {
       <ImagePopup card={this.state.selectedCard} onClose={this.closeAllPopups}>
 
       </ImagePopup>
-
+			</CurrentUserContext.Provider>
 </div>
   );
   }

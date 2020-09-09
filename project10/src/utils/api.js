@@ -107,8 +107,9 @@ class Api {
   }
 
   likeButton(card, isLiked) {
-    if (isLiked) {
-      const likeUrl = this._startUrl.concat("/group-1/cards/likes/" + card._Id);
+    console.log(card._id);
+    if (!isLiked) {
+      const likeUrl = this._startUrl.concat("/group-1/cards/likes/" + card._id);
     fetch(likeUrl, {
         method: "PUT",
         headers: this._headerinfo
@@ -120,7 +121,7 @@ class Api {
 
       })
     } else {
-      const disLikeUrl = this._startUrl.concat("/group-1/cards/likes/" + card._Id);
+      const disLikeUrl = this._startUrl.concat("/group-1/cards/likes/" + card._id);
       fetch(disLikeUrl, {
           method: "DELETE",
           headers: this._headerinfo

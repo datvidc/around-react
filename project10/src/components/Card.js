@@ -11,7 +11,8 @@ function Card(props) {
 }
 
   function handleLike() {
-    props.onLike(props.card, isLiked);
+    let likeClicked = !isLiked;
+    props.onLike(props.card, likeClicked);
   }
 
 return(

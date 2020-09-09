@@ -2,8 +2,7 @@ import React from 'react';
 
 function ImagePopup(props) {
   const isOpenClass = props.card ? "popup_visible" : "";
-
-
+ 
   return (
 
     <div className={`popup popup__img ${isOpenClass}`} >

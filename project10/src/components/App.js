@@ -6,6 +6,7 @@ import PopupWithForm from './PopupWithForm.js';
 import ImagePopup from './ImagePopup.js';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import api from '../utils/api';
+import EditProfilePopup from './EditProfilePopup.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -85,16 +86,7 @@ handleUpdateUser = (valueArr) => {
       <PopupWithForm name="delete-confirm" isOpen={this.state.isDeletePopOpen} heading="Are you sure ?" buttonText="Yes" closeItAll={this.closeAllPopups} >
       </PopupWithForm>
 
-      <PopupWithForm name="changetext" isOpen={this.state.isChangePopOpen} heading="Edit profile" buttonText="Save" closeItAll={this.closeAllPopups} >
-        <label className="popup__label-group">
-          <input id="form-name" type="text" minLength={2} maxLength={40} required pattern="[A-Za-z -]{2,40}" placeholder="Name" className="popup__edit popup__name popup_head" name="ProfileName" />
-          <span id="form-name--error" className="popup__edit_error popup__name-error" />
-        </label>
-        <label className="popup__label-group">
-          <input id="form-status" type="text" minLength={2} maxLength={200} required placeholder="About" className="popup__edit popup__title popup_detail" name="profileTitle" />
-          <span id="form-status--error" className="popup__edit_error popup__title-error" />
-        </label>
-      </PopupWithForm>
+      <EditProfilePopup isOpen={this.state.isChangePopOpen} onClose={this.closeAllPopups} />
 
       <PopupWithForm name="addcard" isOpen={this.state.isAddPopOpen} heading="New place" buttonText="Create" closeItAll={this.closeAllPopups} >
         <label className="popup__label-group ">

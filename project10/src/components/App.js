@@ -45,6 +45,12 @@ handleUpdateUser = (valueArr) => {
     this.setState({ isAddPopOpen: true });
   }
 
+  handleEditUser = (name, about) => {
+    api.updateUser(name, about).then((result) => {
+      this.handleUpdateUser(result);
+    })
+  }
+
   closeAllPopups = () => {
     this.setState({
       isEditPicOpen: false,
@@ -86,7 +92,7 @@ handleUpdateUser = (valueArr) => {
       <PopupWithForm name="delete-confirm" isOpen={this.state.isDeletePopOpen} heading="Are you sure ?" buttonText="Yes" closeItAll={this.closeAllPopups} >
       </PopupWithForm>
 
-      <EditProfilePopup isOpen={this.state.isChangePopOpen} onClose={this.closeAllPopups} />
+      <EditProfilePopup isOpen={this.state.isChangePopOpen} onClose={this.closeAllPopups} onUpdateUser={this.handleEditUser} />
 
       <PopupWithForm name="addcard" isOpen={this.state.isAddPopOpen} heading="New place" buttonText="Create" closeItAll={this.closeAllPopups} >
         <label className="popup__label-group ">

@@ -13,9 +13,9 @@ function Main(props) {
     const cardOwner = card.owner._id === currentUser._id;
 
     if (cardOwner) {
-      api.deleteCard(card._id).then((result) => {
+      api.deleteCard(card._id).then(() => {
         const newCards = cards.filter(c => c._id !== card._id);
-        console.log(newCards);
+        
         setCards(newCards);
       })
     }

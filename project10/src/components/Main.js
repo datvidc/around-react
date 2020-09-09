@@ -8,7 +8,18 @@ function Main(props) {
    const [cards, setCards] = useState([]);
   const currentUser = React.useContext(CurrentUserContext);
 
+  function handleDeleteCard(card) {
+    const cardOwner = card.owner._id === currentUser._id;
+
+    if (cardOwner) {
+      api.deleteCard(card._id).then((result) => {
+        
+      })
+    }
+  }
+
  function handleCardLike(card) {
+   console.log(card);
     const isLiked = card.likes.some(i => i._id === currentUser._id);
 
     api.likeButton(card, isLiked).then((res) => {

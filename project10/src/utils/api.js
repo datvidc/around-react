@@ -70,6 +70,7 @@ class Api {
 
           const el = document.getElementById(cardID).parentElement;
           el.remove();
+          return res.json();
         }
       }).catch(res => {
         console.log(res);

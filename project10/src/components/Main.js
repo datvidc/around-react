@@ -9,7 +9,12 @@ function Main(props) {
   const currentUser = React.useContext(CurrentUserContext);
 
  function handleCardLike(card) {
-    const isLiked = props.card.likes.some(i => i._id === currentUser._id);
+    const isLiked = card.likes.some(i => i._id === currentUser._id);
+
+    api.likeButton(card, isLiked)
+    .then((res) => {
+    console.log(res);
+    })
   }
 
  React.useEffect(() => {

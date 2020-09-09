@@ -106,6 +106,37 @@ class Api {
     }); */
   }
 
+
+likeButton(card, isLiked) {
+  if (isLiked) {
+    const disLikeUrl = this._startUrl.concat("/group-1/cards/likes/" + card._id);
+    return fetch(disLikeUrl, {
+        method: "DELETE",
+        headers: this._headerinfo
+      })
+      .then(res => {
+        if (res.ok) {
+
+        }
+      }).catch(res => {
+        console.log(res);
+      })
+  } else {
+    const likeUrl = this._startUrl.concat("/group-1/cards/likes/" + card._id);
+    return fetch(likeUrl, {
+        method: "PUT",
+        headers: this._headerinfo
+      })
+      .then(res => {
+        if (res.ok) {}
+      }).catch(res => {
+        console.log(res);
+
+      })
+  }
+
+}
+
   likeCard(cardID) {
     const likeUrl = this._startUrl.concat("/group-1/cards/likes/" + cardID);
     fetch(likeUrl, {

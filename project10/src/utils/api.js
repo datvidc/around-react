@@ -107,32 +107,33 @@ class Api {
   }
 
   likeButton(card, isLiked) {
-    console.log(card._id);
     if (!isLiked) {
       const likeUrl = this._startUrl.concat("/group-1/cards/likes/" + card._id);
-    fetch(likeUrl, {
+    return fetch(likeUrl, {
         method: "PUT",
         headers: this._headerinfo
       })
       .then(res => {
-        if (res.ok) {}
+        if (res.ok) {
+          return res.json();
+        }
       }).catch(res => {
         console.log(res);
 
       })
     } else {
       const disLikeUrl = this._startUrl.concat("/group-1/cards/likes/" + card._id);
-      fetch(disLikeUrl, {
+      return fetch(disLikeUrl, {
           method: "DELETE",
           headers: this._headerinfo
         })
         .then(res => {
           if (res.ok) {
+            return res.json();
   
           }
         }).catch(res => {
           console.log(res);
-  
         })
     }
   }

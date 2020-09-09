@@ -68,8 +68,7 @@ class Api {
       .then(res => {
         if (res.ok) {
 
-          const el = document.getElementById(cardID).parentElement;
-          el.remove();
+          return res.json();
         }
       }).catch(res => {
         console.log(res);
@@ -106,6 +105,7 @@ class Api {
     }); */
   }
 
+<<<<<<< HEAD
 
 likeButton(card, isLiked) {
   if (isLiked) {
@@ -123,20 +123,51 @@ likeButton(card, isLiked) {
       })
   } else {
     const likeUrl = this._startUrl.concat("/group-1/cards/likes/" + card._id);
+=======
+  likeButton(card, isLiked) {
+    if (!isLiked) {
+      const likeUrl = this._startUrl.concat("/group-1/cards/likes/" + card._id);
+>>>>>>> feat/2
     return fetch(likeUrl, {
         method: "PUT",
         headers: this._headerinfo
       })
       .then(res => {
+<<<<<<< HEAD
         if (res.ok) {}
+=======
+        if (res.ok) {
+          return res.json();
+        }
+>>>>>>> feat/2
       }).catch(res => {
         console.log(res);
 
       })
+<<<<<<< HEAD
   }
 
 }
 
+=======
+    } else {
+      const disLikeUrl = this._startUrl.concat("/group-1/cards/likes/" + card._id);
+      return fetch(disLikeUrl, {
+          method: "DELETE",
+          headers: this._headerinfo
+        })
+        .then(res => {
+          if (res.ok) {
+            return res.json();
+  
+          }
+        }).catch(res => {
+          console.log(res);
+        })
+    }
+  }
+
+>>>>>>> feat/2
   likeCard(cardID) {
     const likeUrl = this._startUrl.concat("/group-1/cards/likes/" + cardID);
     fetch(likeUrl, {

@@ -8,12 +8,36 @@ function Main(props) {
    const [cards, setCards] = useState([]);
   const currentUser = React.useContext(CurrentUserContext);
 
+<<<<<<< HEAD
  function handleCardLike(card) {
     const isLiked = card.likes.some(i => i._id === currentUser._id);
 
     api.likeButton(card, !isLiked)
     .then((res) => {
     console.log(res);
+=======
+  function handleDeleteCard(card) {
+    //Delete button should not be there if this is not true, but...anyway checking if card is owned by current user
+    const cardOwner = card.owner._id === currentUser._id;
+
+    if (cardOwner) {
+      api.deleteCard(card._id).then((result) => {
+        const newCards = cards.filter(c => c._id !== card._id);
+        console.log(newCards);
+        setCards(newCards);
+      })
+    }
+  }
+
+ function handleCardLike(card) {
+   console.log(card);
+    const isLiked = card.likes.some(i => i._id === currentUser._id);
+
+    api.likeButton(card, isLiked).then((res) => {
+      const newCards = cards.map((card) => 
+        res._id === card._id ? res : card );      
+      setCards(newCards);
+>>>>>>> feat/2
     })
   }
 
@@ -52,7 +76,11 @@ function Main(props) {
     <section className="elements">
       <ul className="elements__list">
         {cards.map((card, index) => (
+<<<<<<< HEAD
           <Card key={index} card={card} onImgClick={props.onCardClick} onLike={handleCardLike}/>
+=======
+          <Card key={index} card={card} onImgClick={props.onCardClick} onDelete={handleDeleteCard} onLike={handleCardLike}/>
+>>>>>>> feat/2
         ))}
       </ul>
     </section>

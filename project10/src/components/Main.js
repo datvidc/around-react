@@ -9,11 +9,14 @@ function Main(props) {
   const currentUser = React.useContext(CurrentUserContext);
 
   function handleDeleteCard(card) {
+    //Delete button should not be there if this is not true, but...anyway checking if card is owned by current user
     const cardOwner = card.owner._id === currentUser._id;
 
     if (cardOwner) {
       api.deleteCard(card._id).then((result) => {
-        
+        const newCards = cards.filter(c => c._id !== card._id);
+        console.log(newCards);
+        setCards(newCards);
       })
     }
   }
@@ -64,7 +67,7 @@ function Main(props) {
     <section className="elements">
       <ul className="elements__list">
         {cards.map((card, index) => (
-          <Card key={index} card={card} onImgClick={props.onCardClick} onLike={handleCardLike}/>
+          <Card key={index} card={card} onImgClick={props.onCardClick} onDelete={handleDeleteCard} onLike={handleCardLike}/>
         ))}
       </ul>
     </section>

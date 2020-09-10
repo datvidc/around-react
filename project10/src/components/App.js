@@ -7,6 +7,7 @@ import ImagePopup from './ImagePopup.js';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import api from '../utils/api';
 import EditProfilePopup from './EditProfilePopup.js';
+import EditAvatarPopup from './EditAvatarPopup.js';
 
 class App extends React.Component {
   constructor(props) {

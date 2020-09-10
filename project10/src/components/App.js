@@ -51,6 +51,11 @@ handleUpdateUser = (valueArr) => {
       this.handleUpdateUser(result);
     })
   }
+  handleEditAvatar = (url) => {
+    api.
+  }
+
+
 
   closeAllPopups = () => {
     this.setState({
@@ -83,7 +88,7 @@ handleUpdateUser = (valueArr) => {
 		    <Main onCardClick={this.handleCardClick} onAvatarClick={this.handleEditAvatarClick} onEditProfile={this.handleEditProfileClick} onAddPlaceClick={this.handleAddPlaceClick}/>
 			  <Footer />
   
-        <EditAvatarPopup isOpen={this.state.isEditPicOpen} onClose={this.closeAllPopups} />
+        <EditAvatarPopup isOpen={this.state.isEditPicOpen} onClose={this.closeAllPopups} onUpdateAvatar={} />
 
       <PopupWithForm name="delete-confirm" isOpen={this.state.isDeletePopOpen} heading="Are you sure ?" buttonText="Yes" closeItAll={this.closeAllPopups} >
       </PopupWithForm>

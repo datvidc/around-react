@@ -47,6 +47,8 @@ class Api {
       })
   }
 
+
+
   _makeRequests(url) {
     return fetch(url, this._header)
       .then(res => {

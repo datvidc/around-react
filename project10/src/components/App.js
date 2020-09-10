@@ -31,6 +31,10 @@ handleCardClick = (value) => {
 
 }
 
+handleUpdateAvatar = (link) => {
+  this.setState({currentUser : link})
+}
+
 handleUpdateUser = (valueArr) => {
 	this.setState({currentUser : valueArr})
 }
@@ -52,7 +56,10 @@ handleUpdateUser = (valueArr) => {
     })
   }
   handleEditAvatar = (url) => {
-    api.
+    api.updateAvatar(url).then((res) => {
+      this.handleUpdateUser(res);
+    })
+    
   }
 
 
@@ -88,7 +95,7 @@ handleUpdateUser = (valueArr) => {
 		    <Main onCardClick={this.handleCardClick} onAvatarClick={this.handleEditAvatarClick} onEditProfile={this.handleEditProfileClick} onAddPlaceClick={this.handleAddPlaceClick}/>
 			  <Footer />
   
-        <EditAvatarPopup isOpen={this.state.isEditPicOpen} onClose={this.closeAllPopups} onUpdateAvatar={} />
+        <EditAvatarPopup isOpen={this.state.isEditPicOpen} onClose={this.closeAllPopups} onUpdateAvatar={this.handleEditAvatar} />
 
       <PopupWithForm name="delete-confirm" isOpen={this.state.isDeletePopOpen} heading="Are you sure ?" buttonText="Yes" closeItAll={this.closeAllPopups} >
       </PopupWithForm>

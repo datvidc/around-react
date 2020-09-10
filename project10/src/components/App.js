@@ -81,13 +81,8 @@ handleUpdateUser = (valueArr) => {
 	      <Header />
 		    <Main onCardClick={this.handleCardClick} onAvatarClick={this.handleEditAvatarClick} onEditProfile={this.handleEditProfileClick} onAddPlaceClick={this.handleAddPlaceClick}/>
 			  <Footer />
-  /*   beginning of Popups */
-      <PopupWithForm name="edit-picture" isOpen={this.state.isEditPicOpen} heading="Change profile picture" buttonText="Yes" closeItAll={this.closeAllPopups} >
-				<label className="popup__label-group">
-				  <input id="user-link" type="url" placeholder="Image link" className="popup__edit_invalid popup__edit popup__url popup_detail " name="imgUrl" required />
-					<span id="user-link--error" className="popup__error-input popup__url_error">Please enter a URL.</span>
-				</label>
-			</PopupWithForm>
+  
+        <EditAvatarPopup isOpen={this.state.isEditPicOpen} onClose={this.closeAllPopups} />
 
       <PopupWithForm name="delete-confirm" isOpen={this.state.isDeletePopOpen} heading="Are you sure ?" buttonText="Yes" closeItAll={this.closeAllPopups} >
       </PopupWithForm>

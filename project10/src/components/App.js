@@ -25,6 +25,8 @@ class App extends React.Component {
   }
 
 
+
+
   handleCardClick = (value) => {
     this.setState({ selectedCard: value });
 
@@ -95,25 +97,23 @@ class App extends React.Component {
 
   }
 
-  handleCardLike(card) {
-    console.log(card);
-    const isLiked = card.likes.some(i => i._id === currentUser._id);
+  handleCardLike = (card) => {
+    const isLiked = card.likes.some(i => i._id === this.state.currentUser._id);
     api.likeButton(card, isLiked).then((res) => {
-      const newCards = cards.map((card) =>
+      const newCards = this.state.cards.map((card) =>
         res._id === card._id ? res : card);
-      setCards(newCards);
+  	this.setState({cards : newCards});
     })
   }
 
-	handleDeleteCard(card) {
+	handleDeleteCard = (card) => {
     //Delete button should not be there if this is not true, but...anyway checking if card is owned by current user
-    const cardOwner = card.owner._id === currentUser._id;
+    const cardOwner = card.owner._id === this.state.currentUser._id;
 
     if (cardOwner) {
       api.deleteCard(card._id).then(() => {
-        const newCards = cards.filter(c => c._id !== card._id);
-        
-        setCards(newCards);
+        const newCards = this.state.cards.filter(c => c._id !== card._id);
+        this.setState({cards : newCards});
       })
     }
   }
@@ -125,7 +125,7 @@ class App extends React.Component {
       <div >
         <CurrentUserContext.Provider value={this.state.currentUser}>
           <Header />
-          <Main onCardClick={this.handleCardClick} onAvatarClick={this.handleEditAvatarClick} onEditProfile={this.handleEditProfileClick} onAddPlaceClick={this.handleAddPlaceClick} />
+          <Main onCardClick={this.handleCardClick} onAvatarClick={this.handleEditAvatarClick} onEditProfile={this.handleEditProfileClick} onAddPlaceClick={this.handleAddPlaceClick} cards={this.state.cards} onCardLike={this.handleCardLike} onCardDelete={this.handleDeleteCard}   />
           <Footer />
 
           <EditAvatarPopup isOpen={this.state.isEditPicOpen} onClose={this.closeAllPopups} onUpdateAvatar={this.handleEditAvatar} />

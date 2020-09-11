@@ -81,7 +81,6 @@ class Api {
 
   addCard(name, link) {
     const addUrl = this._startUrl.concat("/group-1/cards");
-
     return fetch(addUrl, {
         method: "POST",
         headers: this._headerinfo,

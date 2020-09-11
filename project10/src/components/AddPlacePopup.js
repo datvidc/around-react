@@ -15,7 +15,6 @@ function AddPlacePopup(props) {
 		setUrl(e.target.value);
 	}
 
-
 	function onAddPlaceSubmit (e) {
 		e.preventDefault();
 		props.onAddPlace(placeName, url);

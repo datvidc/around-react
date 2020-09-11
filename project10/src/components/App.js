@@ -19,11 +19,10 @@ class App extends React.Component {
       isAddPopOpen: false,
       isImagePopOpen: false,
 			selectedCard: "",
-			currentUser: {} //name: "Lacking Gravitas", about: "SPaceSHip", avatar: defaultAvatarPicture
-      
-    };
-  }
-
+			currentUser: {}, //name: "Lacking Gravitas", about: "SPaceSHip", avatar: defaultAvatarPicture
+      cards : []
+    }; 
+  }  
 
 
 handleCardClick = (value) => {
@@ -84,7 +83,27 @@ handleUpdateUser = (valueArr) => {
   .catch((err) => {
     console.log(err);
   });
+  //now for generating cards
+  api.getInitialCards()
+  .then(res => {
+    let initialCards = [];
+    res.forEach((card) => {
+      initialCards.push(card);
+    });
+    this.setState({cards :initialCards});
+  }) 
+
 	}
+
+  handleCardLike(card) {
+    console.log(card);
+    const isLiked = card.likes.some(i => i._id === currentUser._id);
+    api.likeButton(card, isLiked).then((res) => {
+    const newCards = cards.map((card) => 
+    res._id === card._id ? res : card );      
+     setCards(newCards);
+     })
+   }
 
   render() {
     return (

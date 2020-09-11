@@ -5,7 +5,7 @@ import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 function Main(props) {
 
-   const [cards, setCards] = useState([]);
+  
   const currentUser = React.useContext(CurrentUserContext);
 
   function handleDeleteCard(card) {
@@ -21,31 +21,18 @@ function Main(props) {
     }
   }
 
- function handleCardLike(card) {
-   console.log(card);
-    const isLiked = card.likes.some(i => i._id === currentUser._id);
-
-    api.likeButton(card, isLiked).then((res) => {
-      const newCards = cards.map((card) => 
-        res._id === card._id ? res : card );      
-      setCards(newCards);
-    })
-  }
-
- React.useEffect(() => {
-  api.getInitialCards()
-    .then(res => {
-      let initialCards = [];
+  function handleCardLike(card) {
+    console.log(card);
+     const isLiked = card.likes.some(i => i._id === currentUser._id);
+ 
+     api.likeButton(card, isLiked).then((res) => {
+       const newCards = cards.map((card) => 
+         res._id === card._id ? res : card );      
+       setCards(newCards);
+     })
+   }
 
 
-
-      res.forEach((card) => {
-        initialCards.push(card);
-      });
-      setCards(initialCards);
-    })
-
- },[])
 
 
   return (

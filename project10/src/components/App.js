@@ -8,6 +8,7 @@ import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import api from '../utils/api';
 import EditProfilePopup from './EditProfilePopup.js';
 import EditAvatarPopup from './EditAvatarPopup.js';
+import AddPlacePopup from './AddPlacePopup.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -118,6 +119,11 @@ class App extends React.Component {
     }
   }
 
+	handleAddPlaceSubmit = (name, link) => {
+		api.addCard(name, link)
+
+
+	}
 
   render() {
     return (
@@ -135,16 +141,9 @@ class App extends React.Component {
 
           <EditProfilePopup isOpen={this.state.isChangePopOpen} onClose={this.closeAllPopups} onUpdateUser={this.handleEditUser} />
 
-          <PopupWithForm name="addcard" isOpen={this.state.isAddPopOpen} heading="New place" buttonText="Create" closeItAll={this.closeAllPopups} >
-            <label className="popup__label-group ">
-              <input id="form-title" type="text" minLength={2} maxLength={40} placeholder="Title" className="popup__edit_invalid popup__edit popup__place popup_head" name="placename" required />
-              <span id="form-title--error" className="popup__error-input popup__place-error"> Please fill out this field.</span>
-            </label>
-            <label className="popup__label-group">
-              <input id="form-link" type="url" placeholder="Image link" className="popup__edit_invalid popup__edit popup__url popup_detail" name="popupurl" required />
-              <span id="form-link--error" className="popup__error-input popup__url_error">Please enter a web address.</span>
-            </label>
-          </PopupWithForm>
+					<AddPlacePopup isAddPopOpen={this.state.isAddPopOpen} closeAllPopups={this.closeAllPopups} />
+          
+            
 
           <ImagePopup card={this.state.selectedCard} onClose={this.closeAllPopups}>
           </ImagePopup>

@@ -8,32 +8,7 @@ function Main(props) {
   
   const currentUser = React.useContext(CurrentUserContext);
 
-  function handleDeleteCard(card) {
-    //Delete button should not be there if this is not true, but...anyway checking if card is owned by current user
-    const cardOwner = card.owner._id === currentUser._id;
-
-    if (cardOwner) {
-      api.deleteCard(card._id).then(() => {
-        const newCards = cards.filter(c => c._id !== card._id);
-        
-        setCards(newCards);
-      })
-    }
-  }
-
-  function handleCardLike(card) {
-    console.log(card);
-     const isLiked = card.likes.some(i => i._id === currentUser._id);
- 
-     api.likeButton(card, isLiked).then((res) => {
-       const newCards = cards.map((card) => 
-         res._id === card._id ? res : card );      
-       setCards(newCards);
-     })
-   }
-
-
-
+  
 
   return (
     <main>

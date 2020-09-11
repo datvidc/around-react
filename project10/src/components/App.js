@@ -120,6 +120,8 @@ class App extends React.Component {
   }
 
 	handleAddPlaceSubmit = (name, link) => {
+		console.log(name);
+		console.log(link);
 		api.addCard(name, link)
 
 
@@ -141,7 +143,7 @@ class App extends React.Component {
 
           <EditProfilePopup isOpen={this.state.isChangePopOpen} onClose={this.closeAllPopups} onUpdateUser={this.handleEditUser} />
 
-					<AddPlacePopup isAddPopOpen={this.state.isAddPopOpen} closeAllPopups={this.closeAllPopups} />
+					<AddPlacePopup isAddPopOpen={this.state.isAddPopOpen} closeAllPopups={this.closeAllPopups} onAddPlace={this.handleAddPlaceSubmit} />
           
             
 

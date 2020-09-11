@@ -1,6 +1,13 @@
+
 # around-react
 
 Deployed project can be found here [Project 10](https://datvidc.github.io/around-react/)
+
+# Project 11
+Project 11 in the web developer bootcamp @Yandex Practicum
+
+This sprint was about introducing managed components and states to the project, along with some missing functionality. 
+
 
 # Project 10
 Project 10 in the web developer bootcamp @Yandex Practicum

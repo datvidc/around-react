@@ -16,8 +16,10 @@ function AddPlacePopup(props) {
 	}
 
 
-	function onAddPlaceSubmit () {
+	function onAddPlaceSubmit (e) {
+		e.preventDefault();
 		props.onAddPlace(placeName, url);
+		props.closeAllPopups();
 	}
 
 	return (

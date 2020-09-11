@@ -81,7 +81,6 @@ class App extends React.Component {
     api.getUser()
       .then(res => {
         this.handleUpdateUser(res);
-        console.log(res);
       })
       .catch((err) => {
         console.log(err);
